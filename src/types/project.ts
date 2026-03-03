@@ -1,4 +1,3 @@
-import type { Project } from "@/types/project";
 
 export type Project = {
     slug: string;
