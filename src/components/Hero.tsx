@@ -1,0 +1,81 @@
+import Link from "next/link";
+
+const badges = ["React", "Next.js", "TypeScript", "Tailwind", "Git/GitHub"];
+
+export default function Hero() {
+  return (
+    <section className="py-10">
+      <div className="space-y-5">
+        <p className="text-sm text-white/60">
+          Disponible para oportunidades • Junior Frontend / Fullstack (junior)
+        </p>
+
+        <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">
+          Sergio Cáceres
+          <span className="block text-white/80">Desarrollador Web Junior</span>
+        </h1>
+
+        <p className="max-w-2xl text-lg text-white/60">
+          Construyo aplicaciones web con foco en arquitectura limpia, componentes
+          reutilizables y buena experiencia de usuario. Busco mi primera
+          oportunidad profesional para aportar y crecer en equipo.
+        </p>
+
+        <div className="flex flex-wrap gap-2 pt-2">
+          {badges.map((b) => (
+            <span
+              key={b}
+              className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-sm text-white/70"
+            >
+              {b}
+            </span>
+          ))}
+        </div>
+
+        <div className="flex flex-wrap gap-3 pt-4">
+          <Link
+            href="/projects"
+            className="rounded-lg bg-white px-4 py-2 text-sm font-medium text-black hover:opacity-90 transition"
+          >
+            Ver proyectos
+          </Link>
+
+          <a
+            href="/CV_Sergio_DAW.pdf"
+            target="_blank"
+            rel="noreferrer"
+            className="rounded-lg border border-white/15 px-4 py-2 text-sm font-medium text-white/90 hover:bg-white/10 transition"
+          >
+            Descargar CV
+          </a>
+
+          <a
+            href="https://github.com/Eracres"
+            target="_blank"
+            rel="noreferrer"
+            className="rounded-lg border border-white/15 px-4 py-2 text-sm font-medium text-white/90 hover:bg-white/10 transition"
+          >
+            GitHub
+          </a>
+        </div>
+
+        <div className="grid gap-4 pt-8 sm:grid-cols-3">
+          <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
+            <p className="text-sm text-white/60">Enfoque</p>
+            <p className="mt-1 font-medium">Frontend + buenas prácticas</p>
+          </div>
+
+          <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
+            <p className="text-sm text-white/60">Lo que ofrezco</p>
+            <p className="mt-1 font-medium">Código limpio y mantenible</p>
+          </div>
+
+          <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
+            <p className="text-sm text-white/60">Busco</p>
+            <p className="mt-1 font-medium">Equipo para crecer y aportar</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
