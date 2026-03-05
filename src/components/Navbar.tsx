@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Container from "@/components/Container";
+import { site } from "@/lib/site";
 
 const navItems = [
   { href: "/", label: "Inicio" },
@@ -43,6 +44,25 @@ export default function Navbar() {
               );
             })}
           </ul>
+          <div className="flex items-center gap-2">
+            <a
+              href={site.linkedin}
+              target="_blank"
+              rel="noreferrer"
+              className="rounded-lg border border-white/15 px-3 py-2 text-sm text-white/80 hover:bg-white/10 hover:text-white transition"
+            >
+              LinkedIn
+            </a>
+
+            <a
+              href={site.cvPath}
+              target="_blank"
+              rel="noreferrer"
+              className="rounded-lg bg-white px-3 py-2 text-sm font-medium text-black hover:opacity-90 transition"
+            >
+              CV
+            </a>
+          </div>
         </nav>
       </Container>
     </header>

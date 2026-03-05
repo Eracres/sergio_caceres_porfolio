@@ -2,6 +2,11 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { projects } from "@/data/projects";
+import { site } from "@/lib/site";
+
+export async function generateStaticParams() {
+  return projects.map((p) => ({ slug: p.slug }));
+}
 
 type Params = Promise<{ slug: string }>;
 
@@ -12,7 +17,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { slug } = await params;
   const project = projects.find((p) => p.slug === slug);
-
+  
   if (!project) {
     return {
       title: "Proyecto no encontrado | Sergio Cáceres",
@@ -20,13 +25,16 @@ export async function generateMetadata({
     };
   }
 
+  const ogImage = `${site.url}${project.image}`;
+
   return {
     title: `${project.title} | Sergio Cáceres`,
     description: project.description,
     openGraph: {
       title: `${project.title} | Sergio Cáceres`,
       description: project.description,
-      images: [project.image],
+      url: `${site.url}/projects/${project.slug}`,
+      images: [{ url: ogImage }],
     },
   };
 }
