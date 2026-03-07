@@ -6,7 +6,9 @@ const EMAIL = "shark2150388@gmail.com";
 export default function ContactPage() {
   return (
     <Container>
-      <h1 className="text-4xl font-bold tracking-tight">Contacto</h1>
+      <h1 className="gradient-text text-4xl font-bold tracking-tight">
+        Contacto
+      </h1>
       <p className="mt-4 max-w-2xl text-white/60">
         Si quieres hablar sobre una oportunidad junior o un proyecto, puedes
         escribirme o ver mis perfiles.

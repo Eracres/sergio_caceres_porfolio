@@ -5,7 +5,9 @@ import Container from "@/components/Container";
 export default function ProjectsPage() {
   return (
     <Container>
-      <h1 className="text-4xl font-bold tracking-tight">Proyectos</h1>
+      <h1 className="gradient-text text-4xl font-bold tracking-tight">
+        Proyectos
+      </h1>
       <p className="mt-3 text-white/60">
         Una selección de proyectos donde muestro arquitectura, buenas prácticas y
         resolución de problemas reales.

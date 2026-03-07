@@ -66,7 +66,7 @@ export default function StackPage() {
   return (
     <Container>
       <section className="py-10 text-center">
-        <h1 className="text-5xl font-bold text-orange-500">
+        <h1 className="gradient-text text-5xl font-bold">
           Mis habilidades
         </h1>
 

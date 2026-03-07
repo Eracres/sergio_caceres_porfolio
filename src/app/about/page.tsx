@@ -4,8 +4,9 @@ export default function AboutPage() {
   return (
     <Container>
       <section className="py-6">
-        <h1 className="text-4xl font-bold tracking-tight">Sobre mí</h1>
-
+        <h1 className="gradient-text text-4xl font-bold tracking-tight">
+          Sobre mí
+        </h1>
         <p className="mt-4 max-w-3xl text-white/60">
           Soy Sergio Cáceres, desarrollador web junior, con especial interés en
           la creación de aplicaciones web modernas, bien estructuradas y fáciles
