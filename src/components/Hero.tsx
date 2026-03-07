@@ -1,13 +1,13 @@
 import Link from "next/link";
 
-const badges = ["React", "Next.js", "TypeScript", "Tailwind", "Git/GitHub"];
+const badges = ["React", "Next.js", "TypeScript", "JavaScript", "Git/GitHub"];
 
 export default function Hero() {
   return (
     <section className="py-10">
       <div className="space-y-5">
         <p className="text-sm text-white/60">
-          Disponible para oportunidades • Junior Frontend / Fullstack (junior)
+          Disponible para oportunidades junior
         </p>
 
         <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">
@@ -16,9 +16,10 @@ export default function Hero() {
         </h1>
 
         <p className="max-w-2xl text-lg text-white/60">
-          Construyo aplicaciones web con foco en arquitectura limpia, componentes
-          reutilizables y buena experiencia de usuario. Busco mi primera
-          oportunidad profesional para aportar y crecer en equipo.
+          Desarrollo aplicaciones web con foco en frontend, componentes
+          reutilizables y código bien estructurado. Estoy construyendo proyectos
+          reales para demostrar mi trabajo y encontrar mi primera oportunidad en
+          el sector.
         </p>
 
         <div className="flex flex-wrap gap-2 pt-2">
@@ -57,23 +58,6 @@ export default function Hero() {
           >
             GitHub
           </a>
-        </div>
-
-        <div className="grid gap-4 pt-8 sm:grid-cols-3">
-          <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
-            <p className="text-sm text-white/60">Enfoque</p>
-            <p className="mt-1 font-medium">Frontend + buenas prácticas</p>
-          </div>
-
-          <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
-            <p className="text-sm text-white/60">Lo que ofrezco</p>
-            <p className="mt-1 font-medium">Código limpio y mantenible</p>
-          </div>
-
-          <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
-            <p className="text-sm text-white/60">Busco</p>
-            <p className="mt-1 font-medium">Equipo para crecer y aportar</p>
-          </div>
         </div>
       </div>
     </section>

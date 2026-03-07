@@ -1,15 +1,19 @@
 import Link from "next/link";
 import Container from "@/components/Container";
 import Hero from "@/components/Hero";
+import FeaturedStack from "@/components/FeaturedStack";
 import ProjectCard from "@/components/ProjectCard";
 import { projects } from "@/data/projects";
 
+
 export default function HomePage() {
-  const featured = projects.filter((p) => p.featured).slice(0, 2);
+  const featured = projects.filter((project) => project.featured).slice(0, 2);
 
   return (
     <Container>
       <Hero />
+
+      <FeaturedStack />
 
       <section className="mt-8 border-t border-white/10 pt-8">
         <div className="flex items-baseline justify-between">

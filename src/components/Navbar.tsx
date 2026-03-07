@@ -10,6 +10,7 @@ const navItems = [
   { href: "/projects", label: "Proyectos" },
   { href: "/about", label: "Sobre mí" },
   { href: "/contact", label: "Contacto" },
+  { href: "/stack", label: "Stack" },
 ];
 
 export default function Navbar() {
