@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { site } from "@/lib/site";
 
 const badges = ["React", "Next.js", "TypeScript", "JavaScript", "Git/GitHub"];
 
@@ -71,7 +72,7 @@ export default function Hero() {
           </Link>
 
           <a
-            href="/cv-sergio-caceres.pdf"
+            href={site.cvPath}
             target="_blank"
             rel="noreferrer"
             className="rounded-lg border border-white/15 px-6 py-3 text-sm font-medium text-white/90 transition hover:bg-white/10"
