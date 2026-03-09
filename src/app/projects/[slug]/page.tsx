@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { projects } from "@/data/projects";
 import { site } from "@/lib/site";
+import Container from "@/components/Container";
 
 export async function generateStaticParams() {
   return projects.map((p) => ({ slug: p.slug }));
@@ -17,7 +18,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { slug } = await params;
   const project = projects.find((p) => p.slug === slug);
-  
+
   if (!project) {
     return {
       title: "Proyecto no encontrado | Sergio Cáceres",
@@ -39,7 +40,6 @@ export async function generateMetadata({
   };
 }
 
-
 type Props = {
   params: Promise<{ slug: string }>;
 };
@@ -51,74 +51,99 @@ export default async function ProjectDetailPage({ params }: Props) {
   if (!project) return notFound();
 
   return (
-    <main className="mx-auto max-w-3xl px-4 py-10">
-      <h1 className="text-3xl font-bold">{project.title}</h1>
-      <p className="mt-3 text-white/60">{project.longDescription}</p>
+    <Container>
+      <section className="py-10">
+        <div className="flex flex-wrap items-center gap-3">
+          <span className="rounded-full border border-purple-500/30 bg-purple-500/10 px-3 py-1 text-sm text-purple-300">
+            Proyecto
+          </span>
 
-      <div className="relative mt-8 aspect-[16/9] w-full overflow-hidden rounded-2xl border border-white/10">
-        <Image
-          src={project.image}
-          alt={`Imagen del proyecto ${project.title}`}
-          fill
-          className="object-cover"
-          sizes="(max-width: 768px) 100vw, 800px"
-          priority
-        />
-      </div>
+          {project.featured ? (
+            <span className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-sm text-white/70">
+              Destacado
+            </span>
+          ) : null}
+        </div>
 
-      <section className="mt-8">
-        <h2 className="text-xl font-semibold">Tecnologías</h2>
-        <div className="mt-3 flex flex-wrap gap-2">
-          {project.technologies.map((t) => (
+        <h1 className="gradient-text mt-5 text-4xl font-bold tracking-tight">
+          {project.title}
+        </h1>
+
+        <p className="mt-5 max-w-3xl text-lg leading-8 text-white/60">
+          {project.longDescription}
+        </p>
+      </section>
+
+      <section className="relative overflow-hidden rounded-2xl border border-white/10 bg-white/5">
+        <div className="relative aspect-[16/9] w-full overflow-hidden">
+          <Image
+            src={project.image}
+            alt={`Imagen del proyecto ${project.title}`}
+            fill
+            className="object-cover"
+            sizes="(max-width: 768px) 100vw, 1200px"
+            priority
+          />
+
+          <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent" />
+        </div>
+      </section>
+
+      <section className="mt-10">
+        <h2 className="text-xl font-semibold text-white">Tecnologías</h2>
+
+        <div className="mt-4 flex flex-wrap gap-3">
+          {project.technologies.map((tech) => (
             <span
-              key={t}
-              className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-sm text-white/70"
+              key={tech}
+              className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-white/70 transition hover:border-purple-500/40 hover:text-white"
             >
-              {t}
+              {tech}
             </span>
           ))}
         </div>
       </section>
 
-      <section className="mt-10 grid gap-6 sm:grid-cols-3">
-        <div className="rounded-2xl border border-white/10 bg-white/5 p-5">
-          <h2 className="font-semibold">Features</h2>
-          <ul className="mt-3 space-y-2 text-sm text-white/60">
-            {project.features.map((f) => (
-              <li key={f}>• {f}</li>
+      <section className="mt-12 grid gap-6 lg:grid-cols-3">
+        <div className="rounded-2xl border border-white/10 bg-white/5 p-6 transition duration-300 hover:border-purple-500/30 hover:shadow-[0_0_25px_rgba(168,85,247,0.15)]">
+          <h2 className="text-lg font-semibold text-white">Features</h2>
+          <ul className="mt-4 space-y-3 text-sm leading-7 text-white/60">
+            {project.features.map((feature) => (
+              <li key={feature}>• {feature}</li>
             ))}
           </ul>
         </div>
 
-        <div className="rounded-2xl border border-white/10 bg-white/5 p-5">
-          <h2 className="font-semibold">Retos</h2>
-          <ul className="mt-3 space-y-2 text-sm text-white/60">
-            {project.challenges.map((c) => (
-              <li key={c}>• {c}</li>
+        <div className="rounded-2xl border border-white/10 bg-white/5 p-6 transition duration-300 hover:border-purple-500/30 hover:shadow-[0_0_25px_rgba(168,85,247,0.15)]">
+          <h2 className="text-lg font-semibold text-white">Retos</h2>
+          <ul className="mt-4 space-y-3 text-sm leading-7 text-white/60">
+            {project.challenges.map((challenge) => (
+              <li key={challenge}>• {challenge}</li>
             ))}
           </ul>
         </div>
 
-        <div className="rounded-2xl border border-white/10 bg-white/5 p-5">
-          <h2 className="font-semibold">Aprendizajes</h2>
-          <ul className="mt-3 space-y-2 text-sm text-white/60">
-            {project.learnings.map((l) => (
-              <li key={l}>• {l}</li>
+        <div className="rounded-2xl border border-white/10 bg-white/5 p-6 transition duration-300 hover:border-purple-500/30 hover:shadow-[0_0_25px_rgba(168,85,247,0.15)]">
+          <h2 className="text-lg font-semibold text-white">Aprendizajes</h2>
+          <ul className="mt-4 space-y-3 text-sm leading-7 text-white/60">
+            {project.learnings.map((learning) => (
+              <li key={learning}>• {learning}</li>
             ))}
           </ul>
         </div>
       </section>
 
-      <section className="mt-8">
-        <h2 className="text-xl font-semibold">Enlaces</h2>
-        <div className="mt-3 flex gap-3">
+      <section className="mt-12 rounded-2xl border border-white/10 bg-white/5 p-6">
+        <h2 className="text-xl font-semibold text-white">Enlaces</h2>
+
+        <div className="mt-5 flex flex-wrap gap-4">
           <a
             href={project.githubUrl}
             target="_blank"
             rel="noreferrer"
-            className="rounded-lg border border-white/15 px-4 py-2 hover:bg-white/10 transition"
+            className="rounded-lg border border-white/15 px-5 py-3 text-sm font-medium text-white/90 transition hover:border-purple-500/40 hover:bg-white/10 hover:text-white"
           >
-            Código (GitHub)
+            Código en GitHub
           </a>
 
           {project.demoUrl ? (
@@ -126,17 +151,17 @@ export default async function ProjectDetailPage({ params }: Props) {
               href={project.demoUrl}
               target="_blank"
               rel="noreferrer"
-              className="rounded-lg border border-white/15 px-4 py-2 hover:bg-white/10 transition"
+              className="gradient-button rounded-lg px-5 py-3 text-sm font-medium"
             >
-              Demo
+              Ver demo
             </a>
           ) : (
-            <span className="rounded-lg border border-white/15 px-4 py-2 text-white/60">
-              Demo (próximamente)
+            <span className="rounded-lg border border-white/15 px-5 py-3 text-sm text-white/50">
+              Demo próximamente
             </span>
           )}
         </div>
       </section>
-    </main>
+    </Container>
   );
 }
