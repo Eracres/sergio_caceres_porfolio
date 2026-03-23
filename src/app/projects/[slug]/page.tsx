@@ -74,18 +74,22 @@ export default async function ProjectDetailPage({ params }: Props) {
         </p>
       </section>
 
-      <section className="relative overflow-hidden rounded-2xl border border-white/10 bg-white/5">
-        <div className="relative aspect-[16/9] w-full overflow-hidden">
-          <Image
-            src={project.image}
-            alt={`Imagen del proyecto ${project.title}`}
-            fill
-            className="object-cover"
-            sizes="(max-width: 768px) 100vw, 1200px"
-            priority
-          />
+      <section className="mt-8 flex justify-center">
+        <div className="w-full max-w-4xl overflow-hidden rounded-2xl border border-white/10 bg-white/5">
+          
+          <div className="relative aspect-[16/9] overflow-hidden">
+            <Image
+              src={project.image}
+              alt={`Imagen del proyecto ${project.title}`}
+              fill
+              className="object-cover"
+              sizes="(max-width: 768px) 100vw, 800px"
+              priority
+            />
 
-          <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent" />
+          </div>
+
         </div>
       </section>
 
