@@ -83,7 +83,7 @@ export default async function ProjectDetailPage({ params }: Props) {
             alt={`Imagen del proyecto ${project.title}`}
             fill
             className="object-cover transition duration-500 group-hover:scale-105"
-            sizes="(max-width: 768px) 100vw, 45vw"
+            sizes="(max-width: 500px) 75vw, 45vw"
           />
 
             <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent" />
