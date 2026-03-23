@@ -77,7 +77,7 @@ export default async function ProjectDetailPage({ params }: Props) {
       <section className="mt-8 flex justify-center">
         <div className="w-full max-w-4xl overflow-hidden rounded-2xl border border-white/10 bg-white/5">
           
-        <div className="relative mx-auto aspect-[16/9] max-w-[92%] overflow-hidden rounded-t-2xl">
+        <div className="relative mx-auto aspect-[16/9] max-w-[80%] overflow-hidden rounded-t-2xl">
           <Image
             src={project.image}
             alt={`Imagen del proyecto ${project.title}`}
