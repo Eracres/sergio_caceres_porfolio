@@ -2,45 +2,28 @@ import type { Project } from "@/types/project";
 
 export const projects: Project[] = [
   {
-    slug: "task-manager",
-
-    title: "Task Manager",
-
-    description:
-      "Aplicación para gestionar tareas con filtrado, persistencia local y arquitectura basada en componentes reutilizables.",
-
-    longDescription:
-      "Task Manager es una aplicación CRUD desarrollada para gestionar tareas de forma eficiente. Permite crear, filtrar, completar y eliminar tareas con persistencia en el navegador mediante localStorage. El objetivo del proyecto fue practicar arquitectura limpia en React, separación de responsabilidades y optimización de renders.",
-
-    technologies: ["React", "TypeScript", "Next.js", "Tailwind"],
-
-    image: "/images/projects/task-manager.png",
-
-    githubUrl: "https://github.com/Eracres/task-manager",
-
-    demoUrl: "",
-
-    featured: true,
-
+    slug: "task-manager-pro",
+    title: "Task Manager Pro",
+    description: "Aplicación avanzada de gestión de tareas con arquitectura escalable.",
+    longDescription: "Proyecto fullstack donde implemento...",
+    technologies: ["Next.js", "TypeScript", "Tailwind"],
     features: [
-      "CRUD completo de tareas",
-      "Persistencia de datos con localStorage",
-      "Filtros de tareas (pendientes / completadas)",
-      "Arquitectura basada en componentes reutilizables",
-      "UI responsive",
+      "CRUD completo",
+      "Filtros avanzados",
+      "Persistencia de datos"
     ],
-
     challenges: [
-      "Evitar renders innecesarios al actualizar listas de tareas",
-      "Diseñar una estructura de componentes escalable",
-      "Gestionar correctamente el estado de las tareas",
+      "Gestión de estado compleja",
+      "Arquitectura escalable"
     ],
-
     learnings: [
-      "Modelado de datos con TypeScript",
-      "Optimización de renderizado en React",
-      "Separación clara entre lógica y UI",
+      "Optimización de componentes",
+      "Buenas prácticas en React"
     ],
+    githubUrl: "https://github.com/TU_USER/task-manager-pro",
+    demoUrl: "", // luego Vercel
+    image: "/projects/task-manager.png",
+    featured: true,
   },
 
   {
