@@ -23,7 +23,7 @@ export const projects: Project[] = [
     githubUrl: "https://github.com/Eracres/nextjs-task-manager.git",
     demoUrl: "https://nextjs-task-manager-eight.vercel.app/",
     image: "/projects/task-manager.png",
-    featured: true,
+    featured: false,
   },
 
   {
