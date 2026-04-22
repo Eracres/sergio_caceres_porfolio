@@ -21,7 +21,7 @@ export const projects: Project[] = [
       "Buenas prácticas en React"
     ],
     githubUrl: "https://github.com/Eracres/nextjs-task-manager.git",
-    demoUrl: "", // luego Vercel
+    demoUrl: "https://nextjs-task-manager-eight.vercel.app/",
     image: "/projects/task-manager.png",
     featured: true,
   },
