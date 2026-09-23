@@ -52,7 +52,7 @@ export const projects: Project[] = [
     description:
       "Aplicación para buscar películas y series usando la API de TMDB, con interfaz moderna, filtros por tipo y resultados dinámicos.",
     longDescription:
-      "Movie Finder es una aplicación desarrollada con Angular que consume la API de TMDB para buscar tanto películas como series. Incluye búsqueda avanzada por tipo (películas, series o ambos), normalización de datos entre distintos endpoints, interfaz moderna y responsive, y una experiencia de usuario fluida orientada a la exploración de contenido multimedia.",
+      "Movie Finder es una aplicación desarrollada con Angular que consume la API de TMDB para buscar tanto películas como series. Incluye búsqueda avanzada por tipo (películas, series o ambos), normalización de datos entre distintos endpoints, interfaz moderna y responsive, navegación a páginas de detalle, sistema de favoritos y persistencia del estado de búsqueda.",
     technologies: [
       "Angular",
       "TypeScript",
@@ -63,27 +63,57 @@ export const projects: Project[] = [
     features: [
       "Búsqueda de películas y series",
       "Selector de tipo: Películas, Series o Todo",
-      "Consumo de API externa (TMDB)",
-      "Normalización de datos entre movie y tv",
-      "Gestión de estados (loading, error, empty)",
+      "Consumo de API externa de TMDB",
+      "Normalización de datos entre películas y series",
+      "Paginación de resultados",
+      "Páginas de detalle dinámicas",
+      "Sistema de favoritos",
+      "Persistencia del estado de búsqueda",
+      "Gestión de estados de carga, error y resultados vacíos",
       "Interfaz responsive",
     ],
     challenges: [
-      "Unificar resultados de endpoints distintos (movie / tv)",
-      "Gestionar diferencias entre title y name",
-      "Combinar resultados de múltiples peticiones",
-      "Controlar estados de carga y errores en Angular",
+      "Unificar resultados procedentes de endpoints diferentes de TMDB",
+      "Gestionar diferencias entre los modelos de películas y series",
+      "Combinar y normalizar resultados de múltiples peticiones",
+      "Gestionar correctamente la actualización de la interfaz y detección de cambios",
+      "Mantener el estado de búsqueda durante la navegación",
+      "Compatibilizar almacenamiento del navegador con Angular SSR",
     ],
     learnings: [
       "Consumo de APIs externas con Angular",
-      "Uso de RxJS (map, forkJoin)",
-      "Arquitectura modular en Angular",
+      "Programación reactiva con RxJS",
+      "Arquitectura modular basada en componentes y servicios",
       "Normalización de datos en frontend",
-      "Mejora de UX con estados visuales",
+      "Gestión de estado y persistencia en el navegador",
+      "Angular SSR y compatibilidad entre servidor y navegador",
+      "Diseño de interfaces responsive y mejora de experiencia de usuario",
     ],
-    githubUrl: "https://github.com/Eracres/nextjs-task-manager",
+    githubUrl: "https://github.com/Eracres/movie-finder",
     demoUrl: "https://movie-finder-yz9q.vercel.app/",
-    image: "/images/projects/task-manager.png",
+    image: "/images/projects/movie-finder.png",
     featured: false,
-  }
+  },
+
+  {
+    slug: "cocihub",
+    title: "CociHub",
+    description:
+      "Plataforma web para descubrir, crear y compartir recetas, desarrollada como aplicación fullstack.",
+    longDescription:
+      "CociHub es una plataforma gastronómica fullstack orientada a la creación, descubrimiento y gestión de recetas. El proyecto combina una interfaz moderna con autenticación, persistencia de datos y funcionalidades sociales, y continúa actualmente en desarrollo con nuevas características.",
+
+    technologies: [],
+
+    features: [],
+
+    challenges: [],
+
+    learnings: [],
+
+    githubUrl: "https://github.com/Eracres/coci_hub",
+    demoUrl: "",
+    image: "/images/projects/cocihub.png",
+    featured: true,
+  },
 ];
